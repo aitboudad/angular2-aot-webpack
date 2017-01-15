@@ -8,7 +8,7 @@
     "explorer": "source-map-explorer ./dist/main.bundle.js ./dist/main.bundle.js.map",
     "ngc": "ngc",
     "serve": "http-server ./dist -a 0.0.0.0 -p 9000",
-    "start": "npm run cleanup && npm run ngc && concurrently -r \"webpack-dev-server --config webpack.aot.config.js\" \"node ./bin/ngc-watch.js\"",
+    "start": "npm run cleanup && webpack-dev-server --config webpack.jit.config.js",
     "start-prod": "npm run ngc && npm run build && npm run serve",
     "build": "npm run cleanup && npm run ngc && webpack --config webpack.aot.config.js -p",
     "deploy": "gh-pages -d dist",
@@ -38,6 +38,8 @@
     "@angular/router": "3.4.1",
     "core-js": "2.4.1",
     "rxjs": "5.0.2",
+    "ui-router-core": "1.0.1",
+    "ui-router-ng2": "git+https://github.com/aitboudad/ng2.git#b649735209166c2bafaf4e03f62b2445aea5339b",
     "zone.js": "0.7.4"
   },
   "devDependencies": {
@@ -45,7 +47,7 @@
     "@angular/platform-server": "2.4.1",
     "@types/node": "6.0.53",
     "angular2-template-loader": "0.6.0",
-    "awesome-typescript-loader": "3.0.0-beta.17",
+    "awesome-typescript-loader": "3.0.0-beta.18",
     "chokidar": "1.6.1",
     "concurrently": "3.1.0",
     "copy-webpack-plugin": "4.0.1",
@@ -59,7 +61,7 @@
     "style-loader": "0.13.1",
     "to-string-loader": "1.1.5",
     "typescript": "2.0.10",
-    "webpack": "2.1.0-beta.27",
-    "webpack-dev-server": "2.1.0-beta.11"
+    "webpack": "git+https://github.com/webpack/webpack.git#5a3a23f3e35b24871453a055c07351682c728841",
+    "webpack-dev-server": "2.2.0-rc.0"
   }
 }
